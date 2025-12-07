@@ -28,17 +28,19 @@ const addToCartBtn = document.querySelector('.cta-secondary');
 const pricePerTicket = 50;
 
 function updateSummary() {
-    const quantity = parseInt(quantityInput.value) || 1;
-    const date = dateInput.value || 'Not Selected';
-    const total = quantity * pricePerTicket;
-    
-    summaryQuantity.textContent = quantity;
-    summaryDate.textContent = date;
-    summaryTotal.textContent = '$' + total.toFixed(2);
+    if (quantityInput && dateInput) {
+        const quantity = parseInt(quantityInput.value) || 1;
+        const date = dateInput.value || 'Not Selected';
+        const total = quantity * pricePerTicket;
+        
+        if (summaryQuantity) summaryQuantity.textContent = quantity;
+        if (summaryDate) summaryDate.textContent = date;
+        if (summaryTotal) summaryTotal.textContent = '$' + total.toFixed(2);
+    }
 }
 
-quantityInput.addEventListener('change', updateSummary);
-dateInput.addEventListener('change', updateSummary);
+if (quantityInput) quantityInput.addEventListener('change', updateSummary);
+if (dateInput) dateInput.addEventListener('change', updateSummary);
 
 if (addToCartBtn) {
     addToCartBtn.addEventListener('click', function() {
@@ -71,3 +73,44 @@ if (addToCartBtn) {
         alert('Order added to cart!');
     });
 }
+
+// Song switcher
+const songEmbeds = document.querySelectorAll('.song-embed');
+const dots = document.querySelectorAll('.dot');
+const songTitle = document.getElementById('songTitle');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+const songs = ['song1', 'song2', 'song3'];
+const titles = ['World is Mine', 'Tell Your World', 'Senbonzakura'];
+let currentIndex = 0;
+
+function showSong(index) {
+    songEmbeds.forEach(embed => embed.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    document.getElementById(songs[index]).classList.add('active');
+    document.querySelector(`[data-song="${songs[index]}"]`).classList.add('active');
+    if (songTitle) songTitle.textContent = titles[index];
+    currentIndex = index;
+}
+
+if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + songs.length) % songs.length;
+        showSong(currentIndex);
+    });
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % songs.length;
+        showSong(currentIndex);
+    });
+}
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', function() {
+        showSong(index);
+    });
+});
