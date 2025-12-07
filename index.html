@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>placeholder</title>
+        <title>Band Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>there's nothing here</h1>
-        <p>this is a placeholder page, i haven't started yet</p>
-        <img src="https://pbs.twimg.com/media/G5VNUG6b0AAkAgk?format=jpg&name=medium" alt="lets bounce"
+        <nav class="navbar">
+            <button class="hamburger" id="hamburger">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <button class="close-btn" id="closeBtn">✕</button>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#goods">Goods</a></li>
+                <li><a href="#events">Events</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section class="hero">
+                <div class="hero__content">
+                    <p class="hero__eyebrow">Tour Highlight</p>
+                    <h1>MIKU EXPO 2025 ASIA</h1>
+                    <button class="cta" onclick="window.location.href='order.html'">Buy Tickets</button>
+                </div>
+            </section>
+
+            <section class="miku-section">
+                <div class="miku-content">
+                    <div class="miku-text">
+                        <h2>About Hatsune Miku</h2>
+                        <p>Hatsune Miku is a voice synthesizer application and the first Vocaloid to gain significant popularity. She was developed by Yamaha and released in 2007. Miku's voice is based on samples provided by Saki Fujita, a Japanese voice actress and singer.</p>
+                        <p>With her iconic turquoise hair and futuristic design, Miku has become a global phenomenon in music production and virtual performance. She has collaborated with numerous artists and has performed in concerts worldwide, captivating audiences with her unique holographic presentations.</p>
+                        <p>Miku's versatility allows musicians to create songs in various genres, from pop and rock to electronic and experimental music. Her influence has extended beyond music into anime, manga, and digital culture, making her one of the most recognizable virtual performers in the world.</p>
+                    </div>
+                    <div class="miku-image">
+                        <img src="miku_diva.png" alt="Hatsune Miku">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="main.js"></script>
     </body>
 </html>

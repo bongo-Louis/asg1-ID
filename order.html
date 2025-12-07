@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order Tickets - Band Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <button class="hamburger" id="hamburger">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <button class="close-btn" id="closeBtn">✕</button>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#goods">Goods</a></li>
+                <li><a href="index.html#events">Events</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section class="order-container">
+                <div class="order-form-wrapper">
+                    <h1>Order Tickets</h1>
+                    <form class="order-form">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="quantity">Number of Tickets:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+
+                        <label for="date">Preferred Date:</label>
+                        <input type="date" id="date" name="date" required>
+
+                        <h3>Payment Information</h3>
+
+                        <label for="cardname">Cardholder Name:</label>
+                        <input type="text" id="cardname" name="cardname" required>
+
+                        <label for="cardnumber">Credit Card Number:</label>
+                        <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+
+                        <div class="card-details">
+                            <div>
+                                <label for="expiry">Expiry Date:</label>
+                                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            <div>
+                                <label for="cvv">CVV:</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-item">
+                        <span class="item-label">Event:</span>
+                        <span class="item-value">MIKU EXPO 2025 ASIA</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="item-label">Tickets:</span>
+                        <span class="item-value" id="summaryQuantity">1</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="item-label">Date:</span>
+                        <span class="item-value" id="summaryDate">Not Selected</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-item price">
+                        <span class="item-label">Price per Ticket:</span>
+                        <span class="item-value">$50.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span class="item-label">Total:</span>
+                        <span class="item-value" id="summaryTotal">$50.00</span>
+                    </div>
+                    <button type="button" class="cta-secondary">Order Ticket</button>
+                </div>
+            </section>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>
