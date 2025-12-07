@@ -9,6 +9,8 @@ I wanted to design a simple website for users to quickly order miku's latest tic
 ## website demographic
 this website caters to anyone interested in miku, from newcomers to diehard fans.
 
+## notice
+the embeds for the youtube links do not work as it contained media controlled by vevo and or crypton :(
 
 ## links
 Github Repo Link: https://github.com/bongo-Louis/asg1-ID
