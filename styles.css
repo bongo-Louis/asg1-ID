@@ -392,6 +392,20 @@ main > img { padding: 16px; }
     margin: 0;
 }
 
+.footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 24px 16px;
+    border-top: 1px solid #222;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
 @media (max-width: 768px) {
     .close-btn { display: block; }
     .hero { padding: 48px 16px; min-height: 260px; }
@@ -508,5 +522,13 @@ main > img { padding: 16px; }
     
     .song-titles p {
         font-size: 1rem;
+    }
+    
+    .footer {
+        padding: 16px;
+    }
+    
+    .footer p {
+        font-size: 0.85rem;
     }
 }
